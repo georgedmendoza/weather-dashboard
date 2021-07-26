@@ -6,9 +6,7 @@
     background-color: burlywood;
 }
 
-.current{
-    /* background-color: cadetblue; */
-}
+
 
 /* search heading */
 .search{
@@ -22,5 +20,5 @@
 }
 
 .form{
-     border-bottom: 1px solid black;
+     /* border-bottom: 1px solid black; */
 }
