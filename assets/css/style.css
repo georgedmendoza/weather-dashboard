@@ -1,0 +1,26 @@
+.header{
+    font-size:xx-large;
+}
+
+.search{
+    background-color: burlywood;
+}
+
+.current{
+    /* background-color: cadetblue; */
+}
+
+/* search heading */
+.search{
+    font-size: x-large;
+}
+
+/* add space between search-input and button */
+.submit{
+    margin: 5% auto;
+    /* border-bottom: 10px solid red; */
+}
+
+.form{
+     border-bottom: 1px solid black;
+}

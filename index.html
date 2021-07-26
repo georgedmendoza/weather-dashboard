@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <!-- header of page -->
+    <header class="text-center container-fluid bg-info text-white font-weight-bold header ">
+        Weather Dashboard
+    </header>
+
+    <!-- container for layout -->
+    <div class="container-fluid">
+        
+        <div class="row">
+            <!-- form to search for cities -->
+            <aside class="col-3 form">
+                <h2 class="search" id="form-head">Search for a City:</h2>
+                <input type="text" class="form-control search-bar" id="formGroupExampleInput" placeholder="Kansas City">
+                <button type="button" class="btn btn-secondary btn-sm btn-block submit">Search</button>
+            </aside>
+            <!-- Current-day forecast row -->
+            <div class="row col-9">
+                <div class="col-12 border-dark rounded">
+                
+                <p class="current">some text</p>
+                </div>
+            </div>
+           
+        </div>
+
+        
+    </div>
+
+    <!-- conatiner for current day -->
+    <div>
+
+    </div>
+
+    <!-- coantiner for 5-day forecast -->
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
