@@ -9,7 +9,6 @@ var humidity = document.getElementById('humidity');
 var currentDay = moment().format('d/MM/YYYY');
 var iconEl = document.getElementById('icon');
 var uvEl = document.getElementById('uv');
-
 var getSingleForecast = function(){
     ///fetch call to get everything but UV value
     var searchCity = document.getElementById('input').value;
@@ -57,4 +56,39 @@ var getSingleForecast = function(){
     });  
 };
 
-buttonEl.addEventListener('click',getSingleForecast);
+var fiveDayForecast = function(){
+    //call to get id
+    var searchCity = document.getElementById('input').value;
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + 
+    searchCity +
+    '&units=imperial' +
+    '&appid=' + appid
+    fetch(apiUrl)
+    .then(function(response){
+        if(response.ok){
+            response.json().then(function(data){
+                var id = (data.id);
+                console.log(id);
+                //call to get 5-day forecast 
+                var apiFive = 'https://api.openweathermap.org/data/2.5/forecast?id='+
+                id + '&appid=' + appid
+
+                fetch(apiFive)
+                .then(function(resp){
+                    if(resp.ok){
+                        resp.json().then(function(dat){
+                            console.log(dat);
+                        })
+                    }
+                })
+            })
+        }
+    })
+    
+}
+
+buttonEl.addEventListener('click',() => {
+    fiveDayForecast();
+    getSingleForecast();
+});
+
