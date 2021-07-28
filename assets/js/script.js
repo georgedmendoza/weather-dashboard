@@ -9,7 +9,7 @@ var humidity = document.getElementById('humidity');
 var currentDay = moment().format('d/MM/YYYY');
 var iconEl = document.getElementById('icon');
 var uvEl = document.getElementById('uv');
-var card1 = document.getElementById('card1');
+var card1 = document.getElementById('1');
 
 var getSingleForecast = function(){
     ///fetch call to get everything but UV value
@@ -70,24 +70,42 @@ var fiveDayForecast = function(){
     .then(function(response){
         if(response.ok){
             response.json().then(function(data){
-                //assign variables to each day 
+                //create array list with each desired day in it
                 console.log(data);
                 var fiveCast = [data.list[1], data.list[9],data.list[17], data.list[25],data.list[33]];
-                console.log(fiveCast[0].main.temp);
+                console.log(fiveCast[0]);
+                console.log(fiveCast[0].weather[0].icon);
+                console.log(fiveCast[0].wind.speed);
+                var day1El = document.getElementById('day1');
+                day1El.setAttribute("src","https://openweathermap.org/img/wn/" + fiveCast[0].weather[0].icon + "@2x.png");
+                day1El.setAttribute("alt", fiveCast[0].weather[0].description)
 
-                card1.innerHTML = 
-                '<h6></h6>' + currentDay + '<br></br>' +
-                '<p>Temp: </p>' + fiveCast[0].main.temp  ;
-
-                var day1= data.list[1];
-                console.log(day1);
-                //card1.innerHTML = data.list[1]
+                for(var i=0; i<fiveCast.length; i++){
+                    var logo = fiveCast[i].weather[0].icon;
+                    var pic = document.createElement('img');
+                    //pic.setAttribute("src","https://openweathermap.org/img/wn/" + logo + "@2x.png");
+                    //pic.setAttribute("alt", fiveCast[i].weather[0].description)
+                    //call each div class
+                    document.getElementById(i).innerHTML = 
+                    moment().add(i+1,'days').calendar(null, {
+                        sameDay: 'M/DD/YYYY',
+                        nextDay: 'M/DD/YYYY',
+                        nextWeek: 'M/DD/YYYY',
+                        lastDay: 'M/DD/YYYY',
+                        lastWeek: 'M/DD/YYYY',
+                        sameElse: 'M/DD/YYYY'
+                    }) +'<p></p>'+ logo +'<p></p>'+
+                    'temp: '+ fiveCast[i].main.temp +'<p></p>'+ 
+                    ' Wind: '+ fiveCast[i].wind.speed +'<p></p>'+
+                    'Humidity: '+ fiveCast[i].main.humidity;
+              
+                }
+               
               
             })
         }
     })
 }
-
 
 
 buttonEl.addEventListener('click',() => {
