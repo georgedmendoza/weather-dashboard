@@ -4,12 +4,13 @@ var buttonEl = document.getElementById('search');
 var appid = 'c37f222d1be87273f5169d1997df3ab3';
 var listEl = document.getElementById('searchHistory');
 
-var historySearch = JSON.parse(localStorage.getItem('city') || []);
+//var historySearch = localStorage.getItem('city') || ['kansas'];
+var historySearch = JSON.parse(localStorage.getItem('city') || [] );
 
 
 //var historySearch = localStorage.getItem('city');
-//var historySearch = localStorage.getItem('city') || [];
-//console.log(historySearch.length);
+//var historySearch = localStorage.getItem('city') || ['kansas'];
+console.log(historySearch);
 
 var cityNameEl = document.getElementById('city');
 var temperature = document.getElementById('temp');
@@ -164,6 +165,7 @@ var loadHistory = function(){
     //listEl.appendChild(historySearch);
 }
 
+
 var saveSearch = function(searchCity) {
     historySearch.push(searchCity);
     console.log(searchCity);
@@ -171,12 +173,14 @@ var saveSearch = function(searchCity) {
 }
 
 loadHistory();
+
 buttonEl.addEventListener('click',() => {
     var searchCity = document.getElementById('input').value;
     populate(searchCity);
     fiveDayForecast(searchCity);
     getSingleForecast(searchCity);  
     saveSearch(searchCity);
+   
     //document.getElementById('input').value = '';
     
 });
