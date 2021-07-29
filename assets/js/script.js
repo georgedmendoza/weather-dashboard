@@ -11,6 +11,7 @@ var iconEl = document.getElementById('icon');
 var uvEl = document.getElementById('uv');
 var card1 = document.getElementById('1');
 
+
 var getSingleForecast = function(){
     ///fetch call to get everything but UV value
     var searchCity = document.getElementById('input').value;
@@ -77,8 +78,8 @@ var fiveDayForecast = function(){
                 console.log(fiveCast[0].weather[0].icon);
                 console.log(fiveCast[0].wind.speed);
                 var day1El = document.getElementById('day1');
-                day1El.setAttribute("src","https://openweathermap.org/img/wn/" + fiveCast[0].weather[0].icon + "@2x.png");
-                day1El.setAttribute("alt", fiveCast[0].weather[0].description)
+                //day1El.setAttribute("src","https://openweathermap.org/img/wn/" + fiveCast[0].weather[0].icon + "@2x.png");
+                //day1El.setAttribute("alt", fiveCast[0].weather[0].description)
 
                 for(var i=0; i<fiveCast.length; i++){
                     var logo = fiveCast[i].weather[0].icon;
@@ -107,39 +108,27 @@ var fiveDayForecast = function(){
     })
 }
 
+var historySearch = [];
+
+var loadHistory = function(){
+
+    historySearch = localStorage.getItem('city');
+    console.log(historySearch)
+}
+
+var saveSearch = function() {
+    
+    var searchInput = document.getElementById('input').value;
+    historySearch.push(searchInput);
+    console.log(searchInput);
+    localStorage.setItem('city',JSON.stringify(historySearch));
+}
+
 
 buttonEl.addEventListener('click',() => {
     fiveDayForecast();
     getSingleForecast();
+    loadHistory();
+    saveSearch();
+   
 });
-
-// var fiveDayForecast = function(){
-//     //call to get id
-//     var searchCity = document.getElementById('input').value;
-//     var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + 
-//     searchCity +
-//     '&units=imperial' +
-//     '&appid=' + appid
-//     fetch(apiUrl)
-//     .then(function(response){
-//         if(response.ok){
-//             response.json().then(function(data){
-//                 var id = (data.id);
-//                 console.log(id);
-//                 //call to get 5-day forecast 
-//                 var apiFive = 'https://api.openweathermap.org/data/2.5/forecast?id='+
-//                 id + '&appid=' + appid
-
-//                 fetch(apiFive)
-//                 .then(function(resp){
-//                     if(resp.ok){
-//                         resp.json().then(function(dat){
-//                             console.log(dat);
-//                         })
-//                     }
-//                 })
-//             })
-//         }
-//     })
-    
-// }

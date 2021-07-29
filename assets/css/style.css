@@ -2,14 +2,9 @@
     font-size:xx-large;
 }
 
-.search{
-    /* background-color: burlywood; */
-}
-
-
-
 /* search heading */
 .search{
+    /* background-color: burlywood; */
     font-size: x-large;
 }
 
@@ -18,7 +13,10 @@
     margin: 5% auto;
     /* border-bottom: 10px solid red; */
 }
-
-.form{
-     /* border-bottom: 1px solid black; */
+.card{
+    margin: auto 1%;
 }
+
+/* .form{
+     border-bottom: 1px solid black;
+} */
