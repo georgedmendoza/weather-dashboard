@@ -16,7 +16,7 @@
 
 <body>
     <!-- header of page -->
-    <header class="text-center container-fluid bg-info text-white font-weight-bold header ">
+    <header class="text-center container-fluid bg-primary text-white font-weight-bold header ">
         Weather Dashboard
     </header>
 
@@ -28,11 +28,11 @@
             <aside class="col-3 form">
                 <h2 class="search" id="form-head">Search for a City:</h2>
                 <input type="text" class="form-control search-bar" id="input" placeholder="Kansas City">
-                <button type="button" id="search" class="btn btn-secondary btn-sm btn-block submit">Search</button>
-                <aside class="form ">
-                    <h5>Search History</h5>
-                    <ul class="history">
-                        <li>text</li>
+                <button type="button" id="search" class="btn btn-info btn-lg btn-block submit">Search</button>
+            <aside class="form ">
+                    <h2 class="historyTitle"> Search History</h2>
+                    <ul class="history" id="searchHistory">
+                        
                     </ul>
                 </aside>
             </aside>
@@ -40,10 +40,10 @@
             <!-- Current-day forecast row -->
             <div class="col-9">
                 <div class="row">
-                    <div class="col-11 m-3 border border-dark">
-                        <p id="city" class="text-center"></p>
+                    <div class="col-11 m-3 border border-dark font-weight-bold">
+                        <p id="city" class="text-center font-weight-bolder city"></p>
                         <img src="" alt="" id="icon">
-                        <p id="temp">Temperature:</p>
+                        <p id="temp">Temperature:<span></span></p>
                         <p id="wind">Wind:</p>
                         <p id="humidity">Humidity:</p>
                         <p id="uv">UV-Index:</p>
@@ -54,35 +54,19 @@
                     <div class="col-11 border m-3 border-dark ">
                         <h3>5-Day Forecast</h3>
                         <div class="row fiveContainer">
-                            <div class="card-text col bg-info card  row" id="0">
-                                <img src="" alt="" id="day1">
-                                <!-- <p>Date</p>
-                                <p>Wind: </p>
-                                <p>Humidity: </p> -->
+                            <div class="card-text col bg-primary text-white font-weight-bold card  row" id="0">
                             </div>
-                            <div class="card-text col bg-info card  row" id="1">
-                                <!-- <p>Date</p>
-                                <p>Temp: </p>
-                                <p>Wind: </p>
-                                <p>Humidity: </p> -->
+
+                            <div class="card-text col bg-primary text-white font-weight-bold card  row" id="1">
                             </div>
-                            <div class="card-text col bg-info card row" id="2">
-                                <!-- <p>Date</p>
-                                <p>Temp: </p>
-                                <p>Wind: </p>
-                                <p>Humidity: </p> -->
+
+                            <div class="card-text col bg-primary text-white font-weight-bold card row" id="2">
                             </div>
-                            <div class="card-text col bg-info card row" id="3">
-                                <!-- <p>Date</p>
-                                <p>Temp: </p>
-                                <p>Wind: </p>
-                                <p>Humidity: </p> -->
+
+                            <div class="card-text col bg-primary text-white font-weight-bold card row" id="3">
                             </div>
-                            <div class="card-text col bg-info card row" id="4">
-                                <!-- <p>Date</p>
-                                <p>Temp: </p>
-                                <p>Wind: </p>
-                                <p>Humidity: </p> -->
+
+                            <div class="card-text col bg-primary text-white font-weight-bold card row" id="4">
                             </div>
                     
                         </div>
@@ -90,18 +74,7 @@
                 </div>
             
             </div>
-
-
-            
-           
-        </div>
-
-        
-    </div>
-
-    <!-- conatiner for current day -->
-    <div>
-
+        </div> 
     </div>
 
     <!-- coantiner for 5-day forecast -->
