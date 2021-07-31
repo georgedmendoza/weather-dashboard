@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap and css -->
     <link 
         rel="stylesheet" 
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
@@ -30,6 +31,7 @@
                 <input type="text" class="form-control search-bar" id="input" placeholder="Kansas City">
                 <button type="button" id="search" class="btn btn-info btn-lg btn-block submit">Search</button>
             <aside class="form ">
+                <!-- History of searches -->
                     <h2 class="historyTitle"> Search History</h2>
                     <ul class="history" id="searchHistory">
                         
@@ -49,11 +51,13 @@
                         <p id="uv">UV-Index:</p>
                     </div>
                 </div>
+
             <!-- five day forecast -->
                 <div class="row">
                     <div class="col-11 border m-3 border-dark ">
                         <h3>5-Day Forecast</h3>
                         <div class="row fiveContainer">
+                            <!-- cards for each day  -->
                             <div class="card-text col bg-primary text-white font-weight-bold card  row" id="0">
                             </div>
 
@@ -77,8 +81,10 @@
         </div> 
     </div>
 
-    <!-- coantiner for 5-day forecast -->
+   <!-- moment and js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>

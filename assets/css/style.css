@@ -1,3 +1,4 @@
+/* increase page title */
 .header{
     font-size:xx-large;
 }
@@ -8,37 +9,40 @@
     font-size: x-large;
 }
 
+/* city name-title */
 .city{
     font-size: 200%;
 }
 /* add space between search-input and button */
+
+/* adjust submit button */
 .submit{
     margin: 5% auto;
 }
+
+/*  */
 .historyTitle {
     font-size: large;
     text-align: center;
     border-top: 2px solid black;
 }
 
+/* adjust card width */
 .card{
     margin-left:1%;
     margin-right: 1%;
     width: 20%;
 }
-span {
-    content: "\2109";
-  }
 
+/* background for uv */
 .bgYellow{
     background: yellow;
 }
-
 
 .bgPurple {
     background: purple;
 }
 
-/* .form{
-     border-bottom: 1px solid black;
-} */
+span {
+    content: "\2109";
+}
